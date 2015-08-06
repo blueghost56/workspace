@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+    <package name="admin" namespace="/admin" extends="struts-default">
+         <action name="User_input">
+             <result>
+             <param name="location">/WEB-INF/index.jsp</param>
+             </result>
+         </action>
+          <action name="User_login" class="com.wayx.system.modle.User" method="login">
+             <result name="success">/WEB-INF/jsp/beanTest.jsp</result>
+             <result name="input">/WEB-INF/jsp/admin/login.jsp</result>
+         </action>
+         <action name="User_logout" class="com.wayx.system.modle.User" method="logout">
+             <result name="success">/WEB-INF/jsp/admin/login.jsp</result>
+         </action>
+         <action name="upload" class="com.ways.system.action.FileUploadAction">
+             <result name="success" type="freemarker">/WEB-INF/template/test.ftl</result>
+             <result name="error">/WEB-INF/jsp/fileError.jsp</result>
+         </action>
+    </package>
+
+
+
+</struts>
